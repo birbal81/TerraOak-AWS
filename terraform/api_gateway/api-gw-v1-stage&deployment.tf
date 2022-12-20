@@ -38,6 +38,7 @@ resource "aws_api_gateway_stage" "foo" {
   stage_name            = "foo"
   cache_cluster_enabled = true
   cache_cluster_size    = 237
+  # oak9: cacheclustersize is < 250
   xray_tracing_enabled  = false
   client_certificate_id = aws_api_gateway_client_certificate.foo.id
 
