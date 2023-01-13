@@ -33,6 +33,7 @@ resource "aws_lb" "application" {
 }
 
 resource "aws_lb_listener" "redirect" {
+  # oak9: elastic_load_balancing_v2.listener[0].default_actions[0].authenticate_cognito_config.user_pool_arn is not configured
   load_balancer_arn = aws_lb.application.arn
   
   port              = "80"
