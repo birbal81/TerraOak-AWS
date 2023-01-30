@@ -1,1 +1,21 @@
-
+name: IaC - oak9
+on: push
+jobs:
+  oak9-iac-scan:
+    runs-on: ubuntu-latest
+    name: oak9-action
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v2
+    - name: oak9 Github Action
+      id: oak9
+      uses: oak9io/oak9.githubaction@v1.0.2
+      env:
+        OAK9_API_TOKEN: ${{ secrets.OAK9_API_TOKEN }}
+        GITHUB_REPOSITORY: $GITHUB_REPOSITORY
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        organizationId: 'acorncorp'
+        projectId: 'proj-acorncorp-591'
+        maximumSeverity: 'Critical'
+        logDesignGaps: true
