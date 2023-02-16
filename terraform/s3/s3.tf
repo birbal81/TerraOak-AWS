@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "foo" {
+resource "aws_s3_bucket" "foo" { # oak9:  should be set to any of enabled, true
   # oak9: Set S3 Object Ownership rules to Bucket Owner Enforced instead of Object Writer to align with AWS best practices
   bucket_prefix = "foo-bucket"
   # For public bucket: PubilcRead,PublicReadWrite,AuthenticateRead 
