@@ -4,6 +4,7 @@ resource "aws_secretsmanager_secret_rotation" "secrets_manager_rotation" {
 
    rotation_rules {
      automatically_after_days = 90
+   # oak9: aws_secretsmanager_secret_rotation.rotation_rules.automatically_after_days is not configured to rotate secrets automatically after specified number of days
    }
 }
 
