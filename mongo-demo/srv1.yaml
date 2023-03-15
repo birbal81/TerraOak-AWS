@@ -1,0 +1,12 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+spec:
+  selector:
+    app: mongo # matches deployment matchLabel
+  ports:
+  - protocol: TCP
+    port: 27017 # may or may not be the same as the target
+    targetPort: 27017 # match containerPort, since it forwards to it
