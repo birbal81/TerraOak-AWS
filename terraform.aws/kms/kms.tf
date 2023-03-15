@@ -3,7 +3,7 @@ resource "aws_kms_key" "kms_key_sac" {
   deletion_window_in_days  = 10
   customer_master_key_spec = "SYMMETRIC_DEFAULT"
   key_usage                = "GENERATE_VERIFY_MAC"
-  enable_key_rotation      = false
+  enable_key_rotation      = true
   is_enabled               = false
 
   policy = <<EOF
