@@ -36,6 +36,7 @@ resource "aws_efs_file_system" "ecs_efs_system" {
 
 
 resource "aws_ecs_service" "ecs_service" {
+  # oak9: aws_ecs_service.network_configuration.security_groups is not configured
 
   name            = "testapp-service"
   cluster         = aws_ecs_cluster.ecs_cluster.id
