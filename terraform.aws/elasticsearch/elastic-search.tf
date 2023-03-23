@@ -47,7 +47,7 @@ resource "aws_elasticsearch_domain" "elasticshearch_domain" {
   
   advanced_security_options {
     enabled                        = false
-    internal_user_database_enabled = true
+    internal_user_database_enabled = false
     
     master_user_options {
       master_user_arn      = ""
