@@ -17,7 +17,7 @@ resource "aws_ecs_task_definition" "ecs_task_definition" {
             efs_volume_configuration {
                 file_system_id= aws_efs_file_system.efs.id
                 root_directory= "/"
-                transit_encryption= "DISABLED"
+                transit_encryption= "DISABLED" # oak9: volume.efs_volume_configuration.transit_encryption should be set to any of enabled
                 transit_encryption_port= 2999
             }
     }
