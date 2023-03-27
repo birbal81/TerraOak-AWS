@@ -13,7 +13,7 @@ resource "aws_elasticsearch_domain" "elasticshearch_domain" {
   }
 
   cognito_options {
-    enabled = false
+    enabled = true
     role_arn = ""
   }
 
