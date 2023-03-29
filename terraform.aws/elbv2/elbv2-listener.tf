@@ -2,7 +2,7 @@ resource "aws_lb_listener" "elbv2_listener" {
   load_balancer_arn = aws_lb.elbv2_sac.arn  
   port = 99
 
-  protocol = "HTTP"
+  protocol = "HTTP" # oak9: protocol should be set to any of https, tls
 
   default_action {  
     type = "forward"  
