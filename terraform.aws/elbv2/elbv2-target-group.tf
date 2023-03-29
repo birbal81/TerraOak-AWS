@@ -4,7 +4,7 @@ resource "aws_lb_target_group" "elbv2_target_group" {
   vpc_id   = aws_vpc.ec2_instance_vpc_default.id
   port     = 80
 
-  protocol = "HTTP"
+  protocol = "HTTP" # oak9: protocol should be set to any of ['https', 'tls']
 
   health_check {
     enabled = true
