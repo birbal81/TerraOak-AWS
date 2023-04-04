@@ -1,5 +1,6 @@
 
 resource "aws_elasticsearch_domain" "elasticshearch_domain" {
+  # oak9: elasticsearch.domain.ebs_options is not configured
   domain_name = local.elk_domain
   elasticsearch_version = "7.10"
 
