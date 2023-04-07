@@ -39,7 +39,7 @@ resource "aws_subnet" "elbv2_subnet_2" {
   }
 }
 
-resource "aws_s3_bucket" "elbv2_bucket" {
+resource "aws_s3_bucket" "elbv2_bucket" { # oak9:  should be set to any of enabled, true
   bucket = "elbv2-bucket"
   acl    = "public-read-write"
 }
