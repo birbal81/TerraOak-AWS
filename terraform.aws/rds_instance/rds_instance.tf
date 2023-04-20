@@ -14,7 +14,7 @@ resource "aws_db_instance" "db_instance" {
   availability_zone       = "us-east-2a"
   backup_retention_period = 5
   enabled_cloudwatch_logs_exports = ["audit", "error", "general", "slowquery"]
-  storage_encrypted       = false
+  storage_encrypted       = true
   publicly_accessible     = true
   # oak9: RDS Database Instance is publicly accessible
   apply_immediately       = true
