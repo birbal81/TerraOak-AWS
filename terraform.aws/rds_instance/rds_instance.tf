@@ -1,4 +1,5 @@
 resource "aws_db_instance" "db_instance" {
+  # oak9: Enable Enhanced Monitoring for RDS
   depends_on              = [aws_security_group.default]
   identifier              = var.identifier
   allocated_storage       = 10
