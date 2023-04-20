@@ -19,7 +19,7 @@ resource "aws_db_instance" "db_instance" {
   apply_immediately       = true
   max_allocated_storage   = 20
   deletion_protection     = false
-  iam_database_authentication_enabled = false
+  iam_database_authentication_enabled = true
   skip_final_snapshot    = true
   final_snapshot_identifier = "DELETE"
   tags = {
