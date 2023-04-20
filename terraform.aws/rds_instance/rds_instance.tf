@@ -3,7 +3,7 @@ resource "aws_db_instance" "db_instance" {
   identifier              = var.identifier
   allocated_storage       = 10
   engine                  = "postgres"
-  engine_version          = "9.1"
+  engine_version          = "9.1" # oak9: engine_version should be set to any of ['10.17', '10.18', '10.19', '10.20', '11.12', '11.1311.14', '11.15', '12.7', '12.8', '12.9', '13.3', '13.4', '13.5', '14.1', '14.2']
   instance_class          = var.instance_class
   name                    = var.db_name
   username                = var.username
