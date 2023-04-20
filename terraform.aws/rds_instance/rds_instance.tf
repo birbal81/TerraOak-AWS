@@ -1,4 +1,5 @@
 resource "aws_db_instance" "db_instance" {
+  # oak9: Use customer-managed key for at-rest encryption
   depends_on              = [aws_security_group.default]
   identifier              = var.identifier
   allocated_storage       = 10
