@@ -14,7 +14,7 @@ resource "aws_elasticache_replication_group" "elasticache_replication_group" {
   at_rest_encryption_enabled    = false
   auto_minor_version_upgrade    = true
   automatic_failover_enabled    = false
-  transit_encryption_enabled    = false
+  transit_encryption_enabled    = true
 
   maintenance_window            = "sat:05:30-sat:06:30"
   snapshot_retention_limit      = 7
