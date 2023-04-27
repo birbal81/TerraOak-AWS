@@ -16,6 +16,7 @@ resource "aws_db_instance" "db_instance" {
   enabled_cloudwatch_logs_exports = ["audit", "error", "general", "slowquery"]
   storage_encrypted       = false
   publicly_accessible     = true
+  # oak9: RDS Database Instance is publicly accessible
   apply_immediately       = true
   max_allocated_storage   = 20
   deletion_protection     = false
