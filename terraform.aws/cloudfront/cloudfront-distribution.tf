@@ -44,7 +44,7 @@ resource "aws_cloudfront_distribution" "sac_cloudfront_distribution" {
     }
 }
 
-resource "aws_s3_bucket" "sac_cloudfront_log_bucket" {
+resource "aws_s3_bucket" "sac_cloudfront_log_bucket" { # oak9:  should be set to any of enabled, true
   # oak9: Set S3 Object Ownership rules to Bucket Owner Enforced instead of Object Writer to align with AWS best practices
   bucket = "sac-cloudfront-bucket"
   acl = "private"
