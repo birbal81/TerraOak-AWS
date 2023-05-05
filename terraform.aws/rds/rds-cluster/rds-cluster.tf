@@ -1,4 +1,5 @@
 resource "aws_rds_cluster" "sac_rds_cluster" {
+  # oak9: Use customer-managed key for at-rest encryption
   # oak9: Logging to Cloudwatch is not enabled
   cluster_identifier      = "sac-testing-rds-cluster"
   database_name           = "sacrdsdatabase"
