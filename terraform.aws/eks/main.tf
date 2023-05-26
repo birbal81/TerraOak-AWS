@@ -193,6 +193,7 @@ resource "aws_security_group" "eks_security_group" {
 # KMS
 # ---------------------------------------------------------------------
 resource "aws_kms_key" "eks_kms_key" {
+  # oak9: Define tags to maintain a proper asset inventory. Organizational conventions require that each resource contains at least an environment tag to ensure that the assets are easily identifiable and accounted for.
   description              = "KMS key to encrypt/decrypt"
   deletion_window_in_days  = 10
   key_usage                = "ENCRYPT_DECRYPT"
