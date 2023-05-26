@@ -207,6 +207,7 @@ EOF
 # KMS
 # ---------------------------------------------------------------------
 resource "aws_kms_key" "ec2_instance_kms_key_default" {
+  # oak9: Define tags to maintain a proper asset inventory. Organizational conventions require that each resource contains at least an environment tag to ensure that the assets are easily identifiable and accounted for.
   description             = "Instance-key"
   deletion_window_in_days = 10
 }
