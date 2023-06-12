@@ -19,6 +19,7 @@ resource "aws_db_instance" "default" {
   storage_encrypted       = false
   # SaC Testing - Severity: Critical - Set publicly_accessible to true
   publicly_accessible     = true
+  # oak9: RDS Database Instance is publicly accessible
   # SaC Testing - Severity: High - Set kms_key_id to ""
   kms_key_id = ""
   apply_immediately       = true
