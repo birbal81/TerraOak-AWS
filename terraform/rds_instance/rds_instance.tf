@@ -16,7 +16,7 @@ resource "aws_db_instance" "default" {
   backup_retention_period = 5
   enabled_cloudwatch_logs_exports = ["audit", "error", "general", "slowquery"]
   # SaC Testing - Severity: Critical - Set storage_encrypted to false 
-  storage_encrypted       = false
+  storage_encrypted       = true
   # SaC Testing - Severity: Critical - Set publicly_accessible to true
   publicly_accessible     = true
   # oak9: RDS Database Instance is publicly accessible
