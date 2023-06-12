@@ -25,7 +25,7 @@ resource "aws_db_instance" "default" {
   max_allocated_storage   = 20
   deletion_protection     = false
   # SaC Testing - Severity: High - Set iam_database_authentication_enabled to false
-  iam_database_authentication_enabled = false
+  iam_database_authentication_enabled = true
   skip_final_snapshot    = true
   final_snapshot_identifier = "DELETE"
   tags = {
