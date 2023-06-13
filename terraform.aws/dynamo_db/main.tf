@@ -59,6 +59,7 @@ resource "aws_kms_key" "dynamo_key" {
   enable_key_rotation = false
   key_usage = "ENCRYPT_DECRYPT"
   tags = {
+    # oak9: [My Tython Blueprint] AcornCorp requires that each key have a 'KeyOwner' tag that assigns an owner for each key.
     Name        = "kms-key-1"
   }
 }
