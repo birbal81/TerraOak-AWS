@@ -193,6 +193,7 @@ resource "aws_security_group" "eks_security_group" {
 # KMS
 # ---------------------------------------------------------------------
 resource "aws_kms_key" "eks_kms_key" {
+  # oak9: [My Tython Blueprint] AcornCorp requires that each key have a 'KeyOwner' tag that assigns an owner for each key.
   description              = "KMS key to encrypt/decrypt"
   deletion_window_in_days  = 10
   key_usage                = "ENCRYPT_DECRYPT"
