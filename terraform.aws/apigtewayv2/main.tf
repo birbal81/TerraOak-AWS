@@ -207,6 +207,7 @@ EOF
 # KMS
 # ---------------------------------------------------------------------
 resource "aws_kms_key" "ec2_instance_kms_key_default" {
+  # oak9: [My Tython Blueprint] AcornCorp requires that each key have a 'KeyOwner' tag that assigns an owner for each key.
   description             = "Instance-key"
   deletion_window_in_days = 10
 }
