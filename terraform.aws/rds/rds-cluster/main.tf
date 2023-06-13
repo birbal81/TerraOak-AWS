@@ -153,6 +153,7 @@ resource "aws_kms_key" "sac_kms_key" {
   key_usage = "ENCRYPT_DECRYPT"
 
   tags = {
+    # oak9: [My Tython Blueprint] AcornCorp requires that each key have a 'KeyOwner' tag that assigns an owner for each key.
     Name        = "kms-key-1"
   }
 }
