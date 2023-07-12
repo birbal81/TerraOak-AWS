@@ -17,7 +17,7 @@ resource "aws_cloudfront_distribution" "sac_cloudfront_distribution" {
       allowed_methods = ["HEAD","GET"]
       cached_methods = ["HEAD", "GET"]
       target_origin_id = aws_s3_bucket.sac_cloudfront_log_bucket.id
-      viewer_protocol_policy = "allow-all"
+      viewer_protocol_policy = "allow-all" # oak9: default_cache_behavior.viewer_protocol_policy should be set to any of redirect-to-https, https-only
 
       forwarded_values {
         query_string = false
@@ -35,7 +35,7 @@ resource "aws_cloudfront_distribution" "sac_cloudfront_distribution" {
       custom_origin_config {
         http_port = 80
         https_port = 443
-        origin_protocol_policy = "http-only"
+        origin_protocol_policy = "https-only"
         origin_ssl_protocols = ["TLSv1", "TLSv1.1"]
       }
     }
@@ -55,6 +55,7 @@ resource "aws_cloudfront_origin_access_identity" "origin_access_identity" {
 # S3
 # ---------------------------------------------------------------------
 resource "aws_s3_bucket" "sac_cloudfront_log_bucket" {
+  # oak9: Set S3 Object Ownership rules to Bucket Owner Enforced instead of Object Writer to align with AWS best practices
   bucket = "sac-cloudfront-bucket"
   acl = "private"
 

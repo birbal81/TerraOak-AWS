@@ -11,7 +11,7 @@ resource "aws_elasticsearch_domain" "elasticshearch_domain" {
     log_type                 = "INDEX_SLOW_LOGS"
   }
   node_to_node_encryption {
-    enabled = false
+    enabled = true
   }
 
   cognito_options {
@@ -23,7 +23,7 @@ resource "aws_elasticsearch_domain" "elasticshearch_domain" {
     dedicated_master_enabled = true
     instance_count = 3
     instance_type = "r5.large.elasticsearch"
-    zone_awareness_enabled = false
+    zone_awareness_enabled = true
     
     zone_awareness_config {
       availability_zone_count = 0

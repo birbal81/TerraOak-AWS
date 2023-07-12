@@ -2,6 +2,9 @@
 # RDS
 # ---------------------------------------------------------------------
 resource "aws_db_instance" "sac_db_instance" {
+  # oak9: Use customer-managed key for at-rest encryption
+  # oak9: Configure metric logs for RDS DB Cluster
+  # oak9: Configure event logs for RDS DB Cluster
   db_name                 = "sacDatabaseName"
   identifier              = "sac-testing-db-instance"
   allocated_storage       = 10

@@ -40,7 +40,7 @@ resource "aws_ecs_task_definition" "sac_ecs_task_definition" {
     name = "myEfsVolume"
     efs_volume_configuration {
       file_system_id= aws_efs_file_system.sac_ecs_efs.id
-      transit_encryption= "DISABLED"
+      transit_encryption= "enabled"
       
       authorization_config {
           iam ="DISABLED"
@@ -85,6 +85,7 @@ resource "aws_security_group" "sac_ecs_security_group" {
     to_port         = 0
     protocol        = "-1"
     cidr_blocks     = ["0.0.0.0/0"]
+  # oak9: Explicitly define destination IP addresses for egress rules
   }
 }
 
