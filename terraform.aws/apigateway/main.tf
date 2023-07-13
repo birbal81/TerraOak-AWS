@@ -35,7 +35,7 @@ resource "aws_api_gateway_deployment" "sac_api_gateway_deployment" {
 resource "aws_api_gateway_domain_name" "sac_api_gateway_domain_name" {
   certificate_arn = aws_acm_certificate_validation.example.certificate_arn
   domain_name     = "api.example.com"
-  security_policy = "tls_1_1"
+  security_policy = "tls_1_2"
 }
 
 resource "aws_api_gateway_api_key" "sac_api_gateway_key" {
@@ -119,6 +119,7 @@ resource "aws_iam_role_policy" "sac_api_gateway_role_policy" {
   role = aws_iam_role.sac_api_gateway_role.id
 
   policy = <<EOF
+  # oak9: Explicitly define resources in roles
 {
     "Version": "2012-10-17",
     "Statement": [
